@@ -1,0 +1,47 @@
+<body>
+    <div class="contenedor-form">
+
+        <div>
+            <div class="toggle">
+                <button id="btnCabecera" (click) = "mostrarRegistro()" *ngIf="visibilidadBtnForm">Registrarse</button>
+                <button id="btnCabecera" (click) = "mostrarLogin()" *ngIf="visibilidadBtnLogin">Atrás</button>
+            </div>
+        
+            <div class="formulario" *ngIf="!divLogin">
+                
+                    <h2>Iniciar Sesión</h2>
+                    <input type="text" [(ngModel)]="formLogin.correo" id="input" placeholder="Correo Institucional" required>
+                    <input type="password" [(ngModel)] ="formLogin.clave" id="input" placeholder="Contraseña" required>
+                    <input type="submit" (click)="ingresar()"  value="Ingresar" >
+              
+                
+            </div>
+            <div class="reset-password" *ngIf='!divLogin'>
+                <a href="#">¿Olvidó su contraseña?</a>
+            </div>
+        </div>
+
+        <div class="formularioRegistro" *ngIf="!divRegistro">
+            <h2>Registrar Cuenta</h2>
+            
+                
+                <input type="text" [(ngModel)]="usuario.cedula" id="input"  placeholder="Cedula" required/>
+                <p *ngIf="visibilidadPCedula">Cedula Incorrecta</p>
+                <input type="text" [(ngModel)]="usuario.primerNombre" id="inputRegPrimeros" placeholder="Primer Nombre" required>
+                <p *ngIf="visibilidadP">{{this.des}}</p>
+                <input type="text" [(ngModel)]="usuario.segundoNombre" id="inputRegSegundos" placeholder="Segundo Nombre" required>
+                <input type="text" [(ngModel)]="usuario.primerApellido" id="inputRegPrimeros" placeholder="Primer Apellido" required>
+                <input type="text" [(ngModel)]="usuario.segundoApellido" id="inputRegSegundos" placeholder="Segundo Apellido" required>
+                <input type="email" [(ngModel)]="usuario.correo" id="input" placeholder="Correo Institucional" required>
+                <p *ngIf="visibilidadPCorreo">la direccion de correo no existe</p>
+                <input type="password" [(ngModel)]="usuario.clave" id="input" placeholder="Contraseña" required>
+                <input type="text" [(ngModel)]="usuario.telefonoCelular" id="input" placeholder="Telefono Celular" required>
+                
+              
+                
+                <button  id="btnRegistrar"(click) ="registrar()">Registrarse</button>
+         
+        </div>
+        
+    </div>
+</body>

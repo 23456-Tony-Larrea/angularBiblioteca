@@ -1,0 +1,13 @@
+<body>
+    <div class="contenedor-form">
+        <div class="formulario">
+            <h2>Iniciar Sesión</h2>
+                    <input type="text" [(ngModel)]="formLogin.correo" id="input" placeholder="Correo Institucional" required>
+                    <input type="password" [(ngModel)] ="formLogin.clave" id="input" placeholder="Contraseña" required>
+                    <input type="submit" (click)="ingresar()"  value="Ingresar" >
+        </div>
+        <div class="reset-password">
+            <a href="#">¿Olvidó su contraseña?</a>
+        </div>
+    </div>
+</body>
